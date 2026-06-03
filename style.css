@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, sans-serif;
     background:#f4f9f4;
     color:#333;
     line-height:1.6;
@@ -50,15 +50,16 @@ nav a{
     background:white;
 }
 
-section{
-    padding:50px 20px;
+#hero h2{
+    margin-bottom:15px;
+    color:#2e7d32;
 }
 
 button{
     background:#388e3c;
     color:white;
     border:none;
-    padding:12px 22px;
+    padding:12px 25px;
     margin-top:15px;
     border-radius:8px;
     cursor:pointer;
@@ -67,6 +68,10 @@ button{
 
 button:hover{
     background:#1b5e20;
+}
+
+section{
+    padding:50px 20px;
 }
 
 .cards{
@@ -86,22 +91,24 @@ button:hover{
     text-align:center;
 }
 
-#tecnologia{
-    background:#e8f5e9;
-    text-align:center;
+.card h3{
+    color:#2e7d32;
 }
 
-.oculto{
+#temaDetalhado{
     display:none;
+    background:#e8f5e9;
 }
 
 .detalhe{
+    display:none;
     background:white;
     border-top:5px solid #2e7d32;
 }
 
-#temaDetalhado{
+#tecnologia{
     background:#e8f5e9;
+    text-align:center;
 }
 
 footer{
@@ -121,4 +128,5 @@ footer{
     .cards{
         flex-direction:column;
     }
+
 }

@@ -1,39 +1,41 @@
-// Botão Saiba Mais
+document.addEventListener("DOMContentLoaded", function () {
 
-const btnTema = document.getElementById("btnTema");
-const temaDetalhado = document.getElementById("temaDetalhado");
+    const btnTema = document.getElementById("btnTema");
+    const temaDetalhado = document.getElementById("temaDetalhado");
 
-btnTema.addEventListener("click", () => {
+    btnTema.addEventListener("click", function () {
 
-    temaDetalhado.classList.toggle("oculto");
+        if (temaDetalhado.style.display === "block") {
+            temaDetalhado.style.display = "none";
+        } else {
+            temaDetalhado.style.display = "block";
 
-    temaDetalhado.scrollIntoView({
-        behavior: "smooth"
+            temaDetalhado.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
     });
 
-});
+    const botoes = document.querySelectorAll(".btnDetalhe");
 
+    botoes.forEach(function(botao){
 
-// Botões dos cards
+        botao.addEventListener("click", function(){
 
-const botoes = document.querySelectorAll(".btnDetalhe");
+            document.querySelectorAll(".detalhe").forEach(function(secao){
+                secao.style.display = "none";
+            });
 
-botoes.forEach(botao => {
+            const alvo = botao.getAttribute("data-alvo");
+            const secao = document.getElementById(alvo);
 
-    botao.addEventListener("click", () => {
+            secao.style.display = "block";
 
-        document.querySelectorAll(".detalhe").forEach(secao => {
-            secao.classList.add("oculto");
-        });
+            secao.scrollIntoView({
+                behavior:"smooth"
+            });
 
-        const alvo = botao.getAttribute("data-alvo");
-
-        const secao = document.getElementById(alvo);
-
-        secao.classList.remove("oculto");
-
-        secao.scrollIntoView({
-            behavior: "smooth"
         });
 
     });
